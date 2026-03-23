@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --background: 0.13 0.015 255;
+    --foreground: 0.93 0.012 250;
+    --card: 0.19 0.02 255;
+    --card-foreground: 0.93 0.012 250;
+    --popover: 0.19 0.02 255;
+    --popover-foreground: 0.93 0.012 250;
+    --primary: 0.62 0.2 250;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.24 0.02 255;
+    --secondary-foreground: 0.93 0.012 250;
+    --muted: 0.22 0.018 255;
+    --muted-foreground: 0.67 0.015 250;
+    --accent: 0.44 0.22 290;
+    --accent-foreground: 0.93 0.012 250;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.24 0.02 255;
+    --input: 0.22 0.018 255;
+    --ring: 0.62 0.2 250;
+    --chart-1: 0.62 0.2 250;
+    --chart-2: 0.68 0.16 245;
+    --chart-3: 0.73 0.18 285;
+    --chart-4: 0.44 0.22 290;
+    --chart-5: 0.65 0.22 30;
+    --sidebar: 0.16 0.018 255;
+    --sidebar-foreground: 0.93 0.012 250;
+    --sidebar-primary: 0.62 0.2 250;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.22 0.018 255;
+    --sidebar-accent-foreground: 0.93 0.012 250;
+    --sidebar-border: 0.24 0.02 255;
+    --sidebar-ring: 0.62 0.2 250;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: oklch(var(--background));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(var(--border));
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(var(--muted-foreground));
+  }
+}
+
+@layer utilities {
+  .glow-blue {
+    box-shadow: 0 0 20px oklch(0.62 0.2 250 / 0.3), 0 0 40px
+      oklch(0.62 0.2 250 / 0.1);
+  }
+  .card-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s
+      ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    border-color: oklch(0.62 0.2 250 / 0.4);
+    box-shadow: 0 8px 32px oklch(0.62 0.2 250 / 0.15);
+  }
+}
